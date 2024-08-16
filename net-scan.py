@@ -1,7 +1,3 @@
-# needed packages
-#  pip install python-nmap (as sudo for OS fingerprinting)
-# nmap is needed as well. On macOS: brew install nmap
-
 #!/usr/bin/env python
 import threading,os
 from queue import Queue

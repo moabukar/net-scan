@@ -6,6 +6,8 @@
 
 - Run with sudo `sudo python3 net-scan.py`
 
+Note: # nmap is needed as well. On macOS: brew install nmap, pip install python-nmap (as sudo for OS fingerprinting)
+
 Sample output:
 
 ```bash
