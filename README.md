@@ -1,6 +1,44 @@
 # Net scanning tool 
 
-## Usage
+## How it works
+
+This tool scans your local network to discover live hosts and checks whether specific ports are open on those hosts. The script performs the following steps:
+
+- Discover the Local IP Address: Identifies the local IP address of the machine running the script.
+- Identify the Subnet: Determines the subnet based on the local IP address.
+- Scan the Subnet for Live Hosts: Uses nmap to identify live hosts within the subnet.
+- Port Scanning: Checks if specified ports are open on the discovered live hosts.
+
+## Pre-reqs for Go
+
+```bash
+go get -u github.com/Ullaakut/nmap/v2
+
+go get -u golang.org/x/net/icmp
+go get -u golang.org/x/net/ipv4
+go get -u golang.org/x/net/ipv6
+
+- Ping Scan: The script now only performs a ping scan to discover live hosts on the network without attempting to scan ports during this step.
+
+- Port Scan: Then after discovering live hosts, the script then checks if specific ports are open on each host.
+
+```
+
+### Go output
+
+```bash
+> go run net-scan.go
+
+Local IP:  192.168.1.186
+Subnet:  192.168.1.0/24
+Live hosts on subnet:  [192.168.1.186 192.168.1.254]
+
+Port 53 is open on 192.168.1.254
+Port 443 is open on 192.168.1.254
+Port 80 is open on 192.168.1.254
+```
+
+## Usage for Python
 
 - Make sure to have nmap installed on your machine & python-nmap
 
