@@ -68,7 +68,7 @@ live hosts on subnet:['192.168.1.186', '192.168.1.188', '192.168.1.254']
 
 ### When not connected on network (aka localhost)
 
-- Returns all hosts in the localhost subnet lol
+- Returns all hosts in the localhost subnet local
 
 ```bash
 
@@ -87,5 +87,25 @@ nc -lk 1234 # (separate terminal)
 
 
 echo "testtt" | nc <PrivateIP> 1234 # (get your private IP)
+
+```
+
+## Other networking debugging
+
+```bash
+sudo nmap -sP 192.168.1.0/24
+
+sudo nmap -sS -O -p 1-1000 192.168.1.0/24
+
+-sS performs a TCP SYN scan, which is a common way to detect open ports.
+-O enables OS detection.
+-p 1-1000 scans the first 1000 ports.
+
+## output
+
+PORT    STATE SERVICE
+53/tcp  open  domain
+80/tcp  open  http
+443/tcp open  https
 
 ```
