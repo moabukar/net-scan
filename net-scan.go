@@ -13,7 +13,7 @@ import (
 
 var wg sync.WaitGroup
 
-// Get the local IP address of the machine running the script
+// get local IP address of the machine
 func getLocalIP() string {
 	conn, err := net.Dial("udp", "192.255.255.255:1")
 	if err != nil {
