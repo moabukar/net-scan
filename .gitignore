@@ -1,6 +1,8 @@
 .env
 .DS_Store
 */path
+*.pem
+*.crt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
